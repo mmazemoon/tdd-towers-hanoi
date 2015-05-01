@@ -28,19 +28,19 @@ describe Hanoi do
     before(:each) { game.move_disc(0, 2) }
 
     it "places a disc on the second tower" do
-      expect(game.towers[2]).to_be eq([1])
+      expect(game.towers[2]).to eq([1])
     end
 
     it "removes a disc from the first tower" do
-      expect(game.towers[0]).to_be eq([3,2])
+      expect(game.towers[0]).to eq([3,2])
     end
 
-    it "throws an error if it tries to moves a disc unto a larger disc" do
-      expect {game.move(0,2)}.to raise_error(InvalidMoveError)
+    it "throws an error if it tries to moves a disc onto a larger disc" do
+      expect {game.move_disc(0,2)}.to raise_error(InvalidMoveError)
     end
 
     it "throws an error if there is no disc to move" do
-      expect { game.move(1, 2) }.to raise_error(InvalidMoveError)
+      expect { game.move_disc(1, 2) }.to raise_error(InvalidMoveError)
     end
 
   end
