@@ -1,3 +1,9 @@
+class InvalidMoveError < StandardError
+  def message
+    puts "You can't make that move!"
+  end
+end
+
 class Hanoi
   attr_accessor :towers, :victory_state
 
@@ -16,7 +22,7 @@ class Hanoi
   end
 
   def play
-    
+
   end
 
   def parse_input

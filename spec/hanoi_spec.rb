@@ -35,16 +35,14 @@ describe Hanoi do
       expect(game.towers[0]).to_be eq([3,2])
     end
 
-    # it "doesn't move a disc " do
-    #   expect(game.towers[0]).to_be eq([3,2])
-    # end
-    #
-    # it "removes a disc from the first tower" do
-    #   expect(game.towers[0]).to_be eq([3,2])
-    # end
+    it "throws an error if it tries to moves a disc unto a larger disc" do
+      expect {game.move(0,2)}.to raise_error(InvalidMoveError)
+    end
+
+    it "throws an error if there is no disc to move" do
+      expect { game.move(1, 2) }.to raise_error(InvalidMoveError)
+    end
 
   end
-
-
 
 end
